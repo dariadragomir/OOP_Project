@@ -17,7 +17,11 @@ Proiectul descrie un sistem de gestiune al unui festival de muzică de tipul Unt
 
 ## Referințe
 https://github.com/mcmarius/poo/blob/master/tema-1/intro_recap_c_cpp.md
+
 https://github.com/mcmarius/poo/blob/master/tema-1/README.md
+
 https://en.cppreference.com/w/cpp/error/assert
+
 https://en.cppreference.com/w/cpp/language/default_constructor
+
 https://en.cppreference.com/w/cpp/language/operators
