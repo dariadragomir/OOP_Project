@@ -87,6 +87,34 @@ public:
     }
 };
 
+class Bilet {
+private:
+    string tip_bilet;
+    float pret;
+
+public:
+    Bilet() {} // Constructor implicit
+
+    Bilet(string tip_bilet, float pret)
+        : tip_bilet(tip_bilet), pret(pret) {}
+
+
+    string getTipBilet() const { return tip_bilet; }
+    float getPret() const { return pret; }
+
+    void setTipBilet(string tip_bilet) { this->tip_bilet = tip_bilet; }
+    void setPret(float pret) { this->pret = pret; }
+
+    void aplicareReducereUnder25() {
+            if (tip_bilet == "Under25")
+                pret *= 0.8; // Reducere de 20%
+    }
+    
+    friend ostream& operator<<(ostream& out, const Bilet& bilet) {
+        out << "Tip Bilet: " << bilet.tip_bilet << ", Pret: " << bilet.pret;
+        return out;
+    }
+};
 
 class Concert {
 private:
@@ -159,35 +187,6 @@ public:
         artisti.clear();
         bilete.clear();
         repertoriu.clear();
-    }
-};
-
-class Bilet {
-private:
-    string tip_bilet;
-    float pret;
-
-public:
-    Bilet() {} // Constructor implicit
-
-    Bilet(string tip_bilet, float pret)
-        : tip_bilet(tip_bilet), pret(pret) {}
-
-
-    string getTipBilet() const { return tip_bilet; }
-    float getPret() const { return pret; }
-
-    void setTipBilet(string tip_bilet) { this->tip_bilet = tip_bilet; }
-    void setPret(float pret) { this->pret = pret; }
-
-    void aplicareReducereUnder25() {
-            if (tip_bilet == "Under25")
-                pret *= 0.8; // Reducere de 20%
-    }
-    
-    friend ostream& operator<<(ostream& out, const Bilet& bilet) {
-        out << "Tip Bilet: " << bilet.tip_bilet << ", Pret: " << bilet.pret;
-        return out;
     }
 };
 
