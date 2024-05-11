@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include <stdexcept>
-
 using namespace std;
 
 class Eveniment {
@@ -38,9 +37,8 @@ public:
     }
 };
 
-int Eveniment::nrParticipanti = 0; // initializare variabila membra statica
+int Eveniment::nrParticipanti = 0; // initializez variabila membra statica
 
-// clasa Concert mosteneste virtual din Eveniment
 class Concert : public virtual Eveniment {
 protected:
     string scena;
@@ -67,7 +65,6 @@ public:
         }
 };
 
-// clasa AtelierMuzical mosteneste virtual din Eveniment
 class AtelierMuzical : public virtual Eveniment {
 protected:
     string activitate;
@@ -92,10 +89,9 @@ public:
         }
 };
 
-// Clasa Festival mosteneste din Concert si din AtelierMuzical
 class Festival : public Concert, public AtelierMuzical {
 public:
-    //se apeleaza constructorul cu parametri al clasei de baza folosind lista de initializare din constructorul clasei derivate
+    //apelez constructorul cu parametri al cls de baza folosind lista de initializare din constructorul cls derivate
     Festival(string nume, string locatie, string data, string genMuzical, string scena, int nrPiese, string activitate)
         : Eveniment(nume, locatie, data, genMuzical), Concert(nume, locatie, data, genMuzical, scena, nrPiese),
           AtelierMuzical(nume, locatie, data, genMuzical, activitate) {}
@@ -131,39 +127,37 @@ public:
     }
 };
 
-// functii care arunca exceptii in functie de nr de participanti, durata
 void verificareParticipanti(int nrParticipanti) {
     if (nrParticipanti < 0) {
         throw MyException();
     } else if (nrParticipanti == 0) {
-        throw out_of_range("Nu există participanți!");
+        throw out_of_range("Nu exista participanti!");
     } else {
-        cout << "Numărul de participanți este valid: " << nrParticipanti << '\n';
+        cout << "Numarul de participanti este valid: " << nrParticipanti << '\n';
     }
 }
 void verificaDurata(int durata) {
     if (durata <= 0) {
         throw OutOfRangeException();
     } else {
-        cout << "Durata evenimentului este validă: " << durata << " ore." << '\n';
+        cout << "Durata evenimentului este valida: " << durata << " ore." << '\n';
     }
 }
 int main() {
     Concert concert("Concert1", "Locatie1", "23-08-2025", "Rock", "Scena1", 10);
-    AtelierMuzical atelier("Atelier1", "Locatie2", "02-01-2025", "Jazz", "Curs de chitara");
+    AtelierMuzical atelier("Atelier1", "Locatie2", "02-01-2025", "Pop", "Curs de chitara");
 
-    // Polimorfism la execuție (dynamic dispatch)
+    // polimorfism la executie
     const Eveniment* ptrEveniment1 = &concert;
-    ptrEveniment1->detaliiEveniment(); // Polimorfism la execuție
+    ptrEveniment1->detaliiEveniment();
 
     const Eveniment* ptrEveniment2 = &atelier;
-    ptrEveniment2->detaliiEveniment(); // Polimorfism la execuție
+    ptrEveniment2->detaliiEveniment();
 
-    // Upcasting
+    // upcasting
     const Eveniment& evenimentConcert = concert;
     const Eveniment& evenimentAtelier = atelier;
 
-    // Bloc try...catch pentru prinderea excepțiilor
     try {
         verificareParticipanti(-1);
     } catch (const MyException& e) {
