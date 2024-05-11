@@ -38,3 +38,5 @@ https://en.cppreference.com/w/cpp/error/assert
 https://en.cppreference.com/w/cpp/language/default_constructor
 
 https://en.cppreference.com/w/cpp/language/operators
+
+https://en.cppreference.com/w/cpp/error/exception
