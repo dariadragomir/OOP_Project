@@ -28,6 +28,17 @@ Proiectul descrie un sistem de gestiune al unui festival de muzică de tipul Unt
 - Definirea variabilelor membru statice static int nrParticipanti, static const int durata = 2; in clasa de baza Eveniment si a metodelor statice static void mesajEveniment(), setNrParticipanti(int nr), static int getNrParticipanti().
 - Separarea declarațiilor și implementărilor din program folosind fișiere header (.h) și sursă (.cpp) distincte pentru fiecare clasa. 
 
+## Proiect 3
+
+- Design Patterns:
+    -**observer pattern** pt notificarea schimbarilor de stare a concertelor (clasele Observer, ConcertNotifier, ConsoleObserver
+    -**singleton pattern** pt gestionarea unui singur festival
+    -**strategy pattern** pt calculul pretului biletelor in mod diferit pentru Standard si VIP
+- Folosirea clasei template Lista pentru crearea listei de piese sau artisti
+- Implementarea functiei template gasesteElement
+- Utilizarea tipurilor container din STL vector, map, etc.
+- Utilizarea funcțiilor utilitare diferite din biblioteca standard: sort, find
+- Utilizarea smart pointers: std::unique_ptr, std::shared_ptr.
 ## Referințe
 https://github.com/mcmarius/poo/blob/master/tema-1/intro_recap_c_cpp.md
 
