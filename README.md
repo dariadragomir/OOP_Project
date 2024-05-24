@@ -31,8 +31,11 @@ Proiectul descrie un sistem de gestiune al unui festival de muzică de tipul Unt
 ## Proiect 3
 
 - Design Patterns:
+  
     -**observer pattern** pt notificarea schimbarilor de stare a concertelor (clasele Observer, ConcertNotifier, ConsoleObserver
+  
     -**singleton pattern** pt gestionarea unui singur festival
+  
     -**strategy pattern** pt calculul pretului biletelor in mod diferit pentru Standard si VIP
 - Folosirea clasei template Lista pentru crearea listei de piese sau artisti
 - Implementarea functiei template gasesteElement
