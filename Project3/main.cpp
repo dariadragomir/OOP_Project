@@ -10,6 +10,7 @@ class Piesa {
 private:
     std::string titlu;
     int durata;
+    std::string genMuzical;
 public:
     Piesa(const std::string& titlu, int durata) : titlu(titlu), durata(durata) {}
 
